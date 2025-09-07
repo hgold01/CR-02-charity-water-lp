@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Charity: Water — Give Water. Give Life.</title>
+  <style>
+    :root{
+      --ink:#ffffff; /* All text white */
+      --muted:#f3f4f6;
+      --brand:#003366; /* Updated blue */
+      --brand-hover:#00264d; /* Darker shade for hover */
+    }
+    body{margin:0;font-family:"Proxima Nova",Helvetica,Arial,sans-serif;color:var(--ink);} 
+    img{max-width:100%;display:block;}
+
+    /* Nav */
+    header.nav{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid #e5e7eb;}
+    .nav-inner{max-width:1200px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;}
+    .logo img{height:36px;}
+    nav.nav-links{display:flex;align-items:center;gap:20px;font-family:"Proxima Nova",Helvetica,Arial,sans-serif;}
+    .menu{position:relative;}
+    .menu-btn{background:none;border:0;font-weight:600;cursor:pointer;font-family:"Proxima Nova",Helvetica,Arial,sans-serif;}
+    .chev{display:inline-block;width:8px;height:8px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);margin-left:4px;}
+    .dropdown{display:none;position:absolute;top:100%;left:0;background:#fff;border:1px solid #e5e7eb;border-radius:6px;box-shadow:0 4px 10px rgba(0,0,0,0.1);}
+    .dropdown a{display:block;padding:8px 12px;color:#111827;font-family:"Proxima Nova",Helvetica,Arial,sans-serif;}
+    .dropdown a:hover{background:#f3f4f6;}
+    .nav-cta{background:var(--brand);color:#fff;border:0;padding:8px 16px;border-radius:4px;font-weight:600;cursor:pointer;font-family:"Proxima Nova",Helvetica,Arial,sans-serif;}
+    .nav-cta:hover{background:var(--brand-hover);}
+
+    /* Hero */
+    .hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:flex-start;color:#fff;overflow:hidden;text-align:left;font-family:"Proxima Nova",Helvetica,Arial,sans-serif;}
+    .hero-bg{position:fixed;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:top center;z-index:-2;display:block;}
+    .hero::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,0.65);z-index:-1;}
+    .hero-inner{position:relative;z-index:1;max-width:800px;padding:40px;}
+    .eyebrow{margin:0;font-size:14px;text-transform:uppercase;letter-spacing:0.08em;font-family:"Proxima Nova",Helvetica,Arial,sans-serif;}
+    .headline{font-size:clamp(32px,6vw,56px);margin:10px 0;font-weight:700;line-height:1.2;font-family:"Proxima Nova",Helvetica,Arial,sans-serif;}
+    .subcopy{color:var(--muted);font-size:18px;margin-bottom:20px;line-height:1.4;font-family:"Proxima Nova",Helvetica,Arial,sans-serif;}
+
+    /* CTA */
+    .cta-wrap{display:flex;flex-direction:column;gap:10px;font-family:"Proxima Nova",Helvetica,Arial,sans-serif;}
+    .cta-wrap input{padding:12px;border-radius:6px;border:none;font-size:16px;width:100%;font-family:"Proxima Nova",Helvetica,Arial,sans-serif;}
+    .cta-wrap button{background:var(--brand);color:#fff;border:none;padding:12px;border-radius:6px;font-weight:700;cursor:pointer;font-size:16px;font-family:"Proxima Nova",Helvetica,Arial,sans-serif;}
+    .cta-wrap button:hover{background:var(--brand-hover);}
+
+    .thank-you{margin-top:15px;font-size:16px;color:#f3f4f6;display:none;}
+
+    /* Section after hero */
+    .content-section{padding:40px 20px;max-width:800px;margin:0 auto;line-height:1.6;color:#ffffff;font-family:"Proxima Nova",Helvetica,Arial,sans-serif;}
+
+    /* Larger screens */
+    @media (min-width: 768px){
+      .hero-inner{max-width:800px;padding:40px;}
+      .cta-wrap{flex-direction:row;}
+      .cta-wrap input{flex:1 1 260px;min-width:200px;}
+    }
+  </style>
+</head>
+<body>
+<header class="nav">
+  <div class="nav-inner">
+    <a href="#home" class="logo">
+      <img src="hero.png" alt="Charity: Water Logo" />
+    </a>
+    <nav class="nav-links">
+      <div class="menu">
+        <button class="menu-btn">ABOUT US <span class="chev"></span></button>
+        <div class="dropdown">
+          <a href="#mission">Our Mission</a>
+          <a href="#team">Team</a>
+          <a href="#transparency">Transparency</a>
+        </div>
+      </div>
+      <div class="menu">
+        <button class="menu-btn">YOUR IMPACT <span class="chev"></span></button>
+        <div class="dropdown">
+          <a href="#projects">Projects</a>
+          <a href="#stories">Stories</a>
+          <a href="#reports">Reports</a>
+        </div>
+      </div>
+      <button class="nav-cta">SIGN IN</button>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <!-- Hero image with parallax -->
+  <img class="hero-bg" src="hero.jpeg" alt="" />
+  <div class="hero-inner">
+    <p class="eyebrow">Clean water changes everything</p>
+    <h1 class="headline">Give Water. Give Life.<br/>See the Change.</h1>
+    <p class="subcopy">100% of your donation funds sustainable water projects, with transparent tracking and measurable outcomes you can trust.</p>
+    <form class="cta-wrap" id="donate-form">
+      <input id="email" type="email" placeholder="email" required />
+      <button type="submit">DONATE</button>
+    </form>
+    <p class="thank-you" id="thankYouMsg">Thank you for the gift of fresh water!</p>
+  </div>
+</section>
+
+<section class="content-section">
+  <h2>How Your Gift Works</h2>
+  <p>Every dollar goes to clean water projects. We partner with local organizations, invest in sustainable, community-owned solutions, and publish project results with GPS coordinates and photos so you can track your impact.</p>
+</section>
+
+<script>
+  document.querySelectorAll('.menu-btn').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const dd=btn.nextElementSibling;
+      const open=dd.style.display==='block';
+      document.querySelectorAll('.dropdown').forEach(d=>d.style.display='none');
+      dd.style.display=open?'none':'block';
+    });
+  });
+  document.addEventListener('click',e=>{
+    if(!e.target.closest('.menu')){
+      document.querySelectorAll('.dropdown').forEach(d=>d.style.display='none');
+    }
+  });
+
+  // Thank you message on form submit
+  const donateForm = document.getElementById('donate-form');
+  const thankYouMsg = document.getElementById('thankYouMsg');
+  donateForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    thankYouMsg.style.display = 'block';
+    donateForm.reset();
+  });
+</script>
+</body>
+</html>
